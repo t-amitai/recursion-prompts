@@ -31,14 +31,28 @@ var sum = function(array) {
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
-    var input = array.flat(Infinity);
-    if( input.length === 0 ) {
-        return 0;
+    // var sum = 0;
+
+    // var innerFunction = function (input) {
+    //     if ( typeof input === 'number') {
+    //         sum += input;
+    //         return;
+    //     }
+    //     input.forEach( function (item) {
+    //         innerFunction(item);
+    //     });
+    // };
+    // innerFunction(array);
+    
+    // return sum;
+    var sum = 0;
+    if( typeof array === 'number') {
+        return array;
     }
-    if ( input.length === 1 ) {
-        return input[0];
-    }
-    return input[0] + arraySum(input.slice(1));
+    array.forEach( function (item) {
+        sum += arraySum(item);
+    });
+    return sum;
 };
 
 // 4. Check if a number is even.
@@ -70,21 +84,7 @@ var sumBelow = function(n) {
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
     var array = [];
-    if ( Math.abs(x-y) <= 1 ) {
-        return [];
-    } 
-    if ( x-y === -2 ) { 
-        return [x+1];
-    }
-    if ( x-y === 2 ) {
-        return [x-1];
-    }
-    if ( x < y ) {
-        array.concat[x+1];
-    }
-    if ( x > y ) {
-        return [x-1];
-    }
+    
 };
 
 // 7. Compute the exponent of a number.
